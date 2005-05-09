@@ -1,0 +1,11 @@
+--- ./config/prefs.php.dist~	2005-05-09 08:05:35.000000000 +0300
++++ ./config/prefs.php.dist	2005-05-09 20:20:50.000000000 +0300
+@@ -5,7 +5,7 @@
+  * See horde/config/prefs.php for documentation on the structure of this file.
+  */
+ 
+-require_once dirname(__FILE__) . '/../lib/MIMP.php';
++require_once MIMP_BASE . '/lib/MIMP.php';
+ 
+ $prefGroups['identities'] = array(
+     'column' => _("Your Information"),
