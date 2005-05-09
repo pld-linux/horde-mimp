@@ -1,6 +1,6 @@
 
 %define	_snap	2005-05-09
-%define	_rel	2
+%define	_rel	4
 
 %include	/usr/lib/rpm/macros.php
 Summary:	MIMP is a stripped down version of IMP for use on mobile phones/PDAs
@@ -14,6 +14,7 @@ Source0:	http://ftp.horde.org/pub/snaps/%{_snap}/%{name}-HEAD-%{_snap}.tar.gz
 # don't put snapshots to df
 NoSource:	0
 Source1:	%{name}.conf
+Patch0:		%{name}-prefs.patch
 URL:		http://www.horde.org/mimp/
 Requires:	apache >= 1.3.33-2
 Requires:	apache(mod_access)
@@ -43,6 +44,8 @@ help with MIMP) please visit <http://www.horde.org/>.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
+
 rm -f config/.htaccess
 
 %install
