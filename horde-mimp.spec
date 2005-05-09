@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	MIMP is a stripped down version of IMP for use on mobile phones/PDAs
 Name:		mimp
-Version:	1.0
+Version:	0
 Release:	%{?_snap:0.%(echo %{_snap} | tr -d -).}%{_rel}
 License:	GPL
 Group:		Applications/WWW
