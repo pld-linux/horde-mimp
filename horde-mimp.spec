@@ -1,6 +1,6 @@
 
-%define	_snap	2005-05-09
-%define	_rel	4
+%define	_snap	2005-07-20
+%define	_rel	1
 
 %include	/usr/lib/rpm/macros.php
 Summary:	MIMP - a stripped down version of IMP for use on mobile phones/PDAs
@@ -11,7 +11,7 @@ Release:	%{?_snap:0.%(echo %{_snap} | tr -d -).}%{_rel}
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://ftp.horde.org/pub/snaps/%{_snap}/%{name}-HEAD-%{_snap}.tar.gz
-# NoSource0-md5:	bf1935d3158813d40b3000434350ea1d
+# NoSource0-md5:	ee25ff921e8ea948d0714f554cbf41d7
 # don't put snapshots to df
 NoSource:	0
 Source1:	%{name}.conf
@@ -56,7 +56,8 @@ Genral Public License. Wiêcej informacji (w³±cznie z pomoc± dla
 MIMP-a) mo¿na znale¼æ na stronie <http://www.horde.org/>.
 
 %prep
-%setup -q -n %{name}
+%setup -q -c -n %{name}-%{_snap}
+mv mimp/* .
 %patch0 -p1
 
 rm -f config/.htaccess
