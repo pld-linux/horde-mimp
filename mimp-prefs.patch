@@ -9,3 +9,13 @@
  
  $prefGroups['identities'] = array(
      'column' => _("Your Information"),
+--- ./config/prefs.php.dist~	2005-09-04 12:50:58.000000000 +0300
++++ ./config/prefs.php.dist	2005-09-04 12:51:55.207888014 +0300
+@@ -5,6 +5,7 @@
+  * See horde/config/prefs.php for documentation on the structure of this file.
+  */
+ 
++@define('MIMP_BASE', '/usr/share/horde/mimp');
+ require_once MIMP_BASE . '/lib/MIMP.php';
+ 
+ $prefGroups['identities'] = array(
