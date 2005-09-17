@@ -30,8 +30,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_noautoreq	'pear(Horde.*)' 'pear(Text/Flowed.php)'
 
 %define		hordedir	/usr/share/horde
-%define		_appdir		%{hordedir}/%{_hordeapp}
 %define		_sysconfdir	/etc/horde.org
+%define		_appdir		%{hordedir}/%{_hordeapp}
 
 %description
 MIMP is a project to create a version of IMP suitable for mobile
