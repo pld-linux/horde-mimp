@@ -1,12 +1,12 @@
 %define	_hordeapp mimp
 %define	_snap	2005-09-03
 #define	_rc		rc1
-%define	_rel	4.1
+%define	_rel	0.1
 #
 %include	/usr/lib/rpm/macros.php
 Summary:	MIMP - a stripped down version of IMP for use on mobile phones/PDAs
 Summary(pl):	MIMP - uproszczona wersja IMP-a do u¿ywania na telefonach przeno¶nych i PDA
-Name:		%{_hordeapp}
+Name:		horde-%{_hordeapp}
 Version:	0.1
 Release:	%{?_rc:0.%{_rc}.}%{?_snap:0.%(echo %{_snap} | tr -d -).}%{_rel}
 License:	GPL
@@ -22,6 +22,7 @@ BuildRequires:	tar >= 1:1.15.1
 Requires:	apache >= 1.3.33-2
 Requires:	apache(mod_access)
 Requires:	horde >= 3.0
+Obsoletes:	%{_hordeapp}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
