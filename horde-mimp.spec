@@ -1,7 +1,7 @@
 %define	_hordeapp mimp
 %define	_snap	2005-11-16
 #define	_rc		rc1
-%define	_rel	0.1
+%define	_rel	0.2
 #
 %include	/usr/lib/rpm/macros.php
 Summary:	MIMP - a stripped down version of IMP for use on mobile phones/PDAs
@@ -62,7 +62,9 @@ MIMP-a) mo¿na znale¼æ na stronie <http://www.horde.org/>.
 tar zxf %{SOURCE0} --strip-components=1
 %patch0 -p1
 
-rm -f config/.htaccess
+# Described in documentation as dangerous file...
+rm test.php
+rm config/.htaccess
 
 %install
 rm -rf $RPM_BUILD_ROOT
