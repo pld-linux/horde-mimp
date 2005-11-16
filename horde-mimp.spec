@@ -1,5 +1,5 @@
 %define	_hordeapp mimp
-%define	_snap	2005-09-03
+%define	_snap	2005-11-16
 #define	_rc		rc1
 %define	_rel	0.1
 #
@@ -12,17 +12,18 @@ Release:	%{?_rc:0.%{_rc}.}%{?_snap:0.%(echo %{_snap} | tr -d -).}%{_rel}
 License:	GPL
 Group:		Applications/WWW
 Source0:	ftp://ftp.horde.org/pub/snaps/%{_snap}/%{_hordeapp}-HEAD-%{_snap}.tar.gz
-# Source0-md5:	45f846e8cd5e5a798174cdbf204db7f9
+# Source0-md5:	292e081544b219fe894713d33ca77ff6
 Source1:	%{_hordeapp}.conf
 Patch0:		%{_hordeapp}-prefs.patch
 URL:		http://www.horde.org/mimp/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 BuildRequires:	rpmbuild(macros) >= 1.226
 BuildRequires:	tar >= 1:1.15.1
-Requires:	apache >= 1.3.33-2
 Requires:	apache(mod_access)
 Requires:	horde >= 3.0
+Requires:	webserver = apache
 Obsoletes:	%{_hordeapp}
+Conflicts:	apache < 1.3.33-2
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
