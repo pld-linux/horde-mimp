@@ -5,7 +5,7 @@
 #
 %include	/usr/lib/rpm/macros.php
 Summary:	MIMP - a stripped down version of IMP for use on mobile phones/PDAs
-Summary(pl):	MIMP - uproszczona wersja IMP-a do u¿ywania na telefonach przeno¶nych i PDA
+Summary(pl.UTF-8):   MIMP - uproszczona wersja IMP-a do uÅ¼ywania na telefonach przenoÅ›nych i PDA
 Name:		horde-%{_hordeapp}
 Version:	1.0
 Release:	%{?_rc:0.%{_rc}.}%{?_snap:0.%(echo %{_snap} | tr -d -).}%{_rel}
@@ -47,17 +47,17 @@ The Horde Project writes web applications in PHP and releases them
 under the GNU General Public License. For more information (including
 help with MIMP) please visit <http://www.horde.org/>.
 
-%description -l pl
-MIMP to projekt maj±cy na celu stworzenie wersji IMP-a odpowiedniej
-dla urz±dzeñ przeno¶nych, takich jak telefony WAP czy PDA. Podstawowa
-funkcjonalno¶æ jest teraz w ca³o¶ci zaimplementowana, w³±cznie z
-ogl±daniem skrzynek pocztowych i stronicowaniem, ogl±daniem
-wiadomo¶ci, usuwaniem, odpowiadaniem, przekazywaniem i tworzeniem
-nowych wiadomo¶ci.
+%description -l pl.UTF-8
+MIMP to projekt majÄ…cy na celu stworzenie wersji IMP-a odpowiedniej
+dla urzÄ…dzeÅ„ przenoÅ›nych, takich jak telefony WAP czy PDA. Podstawowa
+funkcjonalnoÅ›Ä‡ jest teraz w caÅ‚oÅ›ci zaimplementowana, wÅ‚Ä…cznie z
+oglÄ…daniem skrzynek pocztowych i stronicowaniem, oglÄ…daniem
+wiadomoÅ›ci, usuwaniem, odpowiadaniem, przekazywaniem i tworzeniem
+nowych wiadomoÅ›ci.
 
 Projekt Horde tworzy aplikacje WWW w PHP i wydaje je na licencji GNU
-Genral Public License. Wiêcej informacji (w³±cznie z pomoc± dla
-MIMP-a) mo¿na znale¼æ na stronie <http://www.horde.org/>.
+Genral Public License. WiÄ™cej informacji (wÅ‚Ä…cznie z pomocÄ… dla
+MIMP-a) moÅ¼na znaleÅºÄ‡ na stronie <http://www.horde.org/>.
 
 %prep
 %setup -qcT -n %{?_snap:%{_hordeapp}-%{_snap}}%{!?_snap:%{_hordeapp}-%{version}%{?_rc:-%{_rc}}}
