@@ -1,7 +1,8 @@
+1;2c# $Revision: 1.30 $, $Date: 2007-08-01 11:41:13 $
 %define	_hordeapp mimp
 #define	_snap	2006-01-08
 #define	_rc		beta
-%define	_rel	2
+%define	_rel	3
 #
 %include	/usr/lib/rpm/macros.php
 Summary:	MIMP - a stripped down version of IMP for use on mobile phones/PDAs
