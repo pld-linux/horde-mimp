@@ -1,20 +1,20 @@
 %define	_hordeapp mimp
 #define	_snap	2006-01-08
-#define	_rc		beta
+%define	_rc		rc1
 %define	_rel	1
 #
 %include	/usr/lib/rpm/macros.php
 Summary:	MIMP - a stripped down version of IMP for use on mobile phones/PDAs
-Summary(pl.UTF-8):	MIMP - uproszczona wersja IMP-a do używania na telefonach przenośnych i PDA
+Summary(pl.UTF-8):	MIMP - uproszczona wersja IMP-a do u??ywania na telefonach przeno??nych i PDA
 Name:		horde-%{_hordeapp}
-Version:	1.0.2
+Version:	1.1
 Release:	%{?_rc:0.%{_rc}.}%{?_snap:0.%(echo %{_snap} | tr -d -).}%{_rel}
 License:	GPL
 Group:		Applications/WWW
 #Source0:	ftp://ftp.horde.org/pub/snaps/%{_snap}/%{_hordeapp}-HEAD-%{_snap}.tar.gz
-#Source0:	ftp://ftp.horde.org/pub/mimp/%{_hordeapp}-h3-%{version}-%{_rc}.tar.gz
-Source0:	ftp://ftp.horde.org/pub/mimp/%{_hordeapp}-h3-%{version}.tar.gz
-# Source0-md5:	a3d3bafdd1efceb698493b22d79b7867
+Source0:	ftp://ftp.horde.org/pub/mimp/%{_hordeapp}-h3-%{version}-%{_rc}.tar.gz
+# Source0-md5:	bcf7e93d175935e39654392b5b683e96
+#Source0:	ftp://ftp.horde.org/pub/mimp/%{_hordeapp}-h3-%{version}.tar.gz
 Source1:	%{_hordeapp}.conf
 Patch0:		%{_hordeapp}-prefs.patch
 URL:		http://www.horde.org/mimp/
@@ -48,16 +48,16 @@ under the GNU General Public License. For more information (including
 help with MIMP) please visit <http://www.horde.org/>.
 
 %description -l pl.UTF-8
-MIMP to projekt mający na celu stworzenie wersji IMP-a odpowiedniej
-dla urządzeń przenośnych, takich jak telefony WAP czy PDA. Podstawowa
-funkcjonalność jest teraz w całości zaimplementowana, włącznie z
-oglądaniem skrzynek pocztowych i stronicowaniem, oglądaniem
-wiadomości, usuwaniem, odpowiadaniem, przekazywaniem i tworzeniem
-nowych wiadomości.
+MIMP to projekt maj??cy na celu stworzenie wersji IMP-a odpowiedniej
+dla urz??dze?? przeno??nych, takich jak telefony WAP czy PDA. Podstawowa
+funkcjonalno???? jest teraz w ca??o??ci zaimplementowana, w????cznie z
+ogl??daniem skrzynek pocztowych i stronicowaniem, ogl??daniem
+wiadomo??ci, usuwaniem, odpowiadaniem, przekazywaniem i tworzeniem
+nowych wiadomo??ci.
 
 Projekt Horde tworzy aplikacje WWW w PHP i wydaje je na licencji GNU
-Genral Public License. Więcej informacji (włącznie z pomocą dla
-MIMP-a) można znaleźć na stronie <http://www.horde.org/>.
+Genral Public License. Wi??cej informacji (w????cznie z pomoc?? dla
+MIMP-a) mo??na znale???? na stronie <http://www.horde.org/>.
 
 %prep
 %setup -qcT -n %{?_snap:%{_hordeapp}-%{_snap}}%{!?_snap:%{_hordeapp}-%{version}%{?_rc:-%{_rc}}}
@@ -67,8 +67,6 @@ tar zxf %{SOURCE0} --strip-components=1
 for i in config/*.dist; do
 	mv $i config/$(basename $i .dist)
 done
-# considered harmful (horde/docs/SECURITY)
-rm test.php
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -140,7 +138,6 @@ fi
 %attr(660,root,http) %config(noreplace) %{_sysconfdir}/conf.php
 %attr(660,root,http) %config(noreplace) %ghost %{_sysconfdir}/conf.php.bak
 %attr(640,root,http) %config(noreplace) %{_sysconfdir}/[!c]*.php
-%attr(640,root,http) %config(noreplace) %{_sysconfdir}/*.txt
 %attr(640,root,http) %{_sysconfdir}/conf.xml
 
 %dir %{_appdir}
