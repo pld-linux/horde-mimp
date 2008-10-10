@@ -17,7 +17,7 @@ BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	horde >= 3.0
 Requires:	horde-imp >= 4.3
 Requires:	webapps
-Obsoletes:	%{_hordeapp}
+Obsoletes:	mimp
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
