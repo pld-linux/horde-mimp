@@ -5,7 +5,7 @@ Summary:	MIMP - a stripped down version of IMP for use on mobile phones/PDAs
 Summary(pl.UTF-8):	MIMP - uproszczona wersja IMP-a do używania na telefonach przenośnych i PDA
 Name:		horde-%{_hordeapp}
 Version:	1.1.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/WWW
 Source0:	ftp://ftp.horde.org/pub/mimp/%{_hordeapp}-h3-%{version}.tar.gz
@@ -14,8 +14,8 @@ Source1:	%{_hordeapp}.conf
 URL:		http://www.horde.org/mimp/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 BuildRequires:	rpmbuild(macros) >= 1.268
-Requires:	horde >= 3.0
-Requires:	horde-imp >= 4.3
+Requires:	horde >= 3.2
+Requires:	horde-imp >= 4.2
 Requires:	webapps
 Obsoletes:	mimp
 BuildArch:	noarch
