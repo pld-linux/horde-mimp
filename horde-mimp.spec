@@ -1,6 +1,5 @@
 %define	_hordeapp mimp
 #
-%include	/usr/lib/rpm/macros.php
 Summary:	MIMP - a stripped down version of IMP for use on mobile phones/PDAs
 Summary(pl.UTF-8):	MIMP - uproszczona wersja IMP-a do używania na telefonach przenośnych i PDA
 Name:		horde-%{_hordeapp}
